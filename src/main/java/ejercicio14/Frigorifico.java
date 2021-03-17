@@ -9,7 +9,7 @@ package ejercicio14;
  *
  * @author redu2
  */
-public class Frigorifico extends Electrodomestico implements MuestraInformacion, Comparable{
+public class Frigorifico extends Electrodomestico implements MuestraInformacion, Comparable<Frigorifico>{
 
     private int litros;
 
@@ -34,12 +34,13 @@ public class Frigorifico extends Electrodomestico implements MuestraInformacion,
     @Override
     public void muestra() {
         
-        System.out.println("Capacidad de 60 litros");
+        System.out.println("Capacidad de " + litros + " litros");
     }
 
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(Frigorifico f) {
         
+        return this.litros - f.getLitros();
     }
     
 }

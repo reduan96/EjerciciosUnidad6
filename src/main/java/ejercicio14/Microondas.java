@@ -9,7 +9,7 @@ package ejercicio14;
  *
  * @author redu2
  */
-public class Microondas extends Electrodomestico implements MuestraInformacion, Comparable{
+public class Microondas extends Electrodomestico implements MuestraInformacion, Comparable<Microondas> {
 
     private int vatios;
 
@@ -30,16 +30,17 @@ public class Microondas extends Electrodomestico implements MuestraInformacion, 
     public String toString() {
         return "Microondas{" + "vatios=" + vatios + '}';
     }
-    
+
     @Override
     public void muestra() {
-        
+
         System.out.println("2000w máximos de potencia");
     }
 
     @Override
-    public int compareTo(Object o) {
-       
+    public int compareTo(Microondas m) {
+
+        return this.vatios - m.getVatios();
     }
-    
+
 }
